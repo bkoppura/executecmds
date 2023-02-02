@@ -13,14 +13,13 @@ public class CommandExecuter {
 		boolean isWindows = System.getProperty("os.name")
 				  .toLowerCase().startsWith("windows");
 		
-		String homeDirectory = System.getProperty("user.home");
 		Process process;
 		if (isWindows) {
 		    process = Runtime.getRuntime()
-		      .exec(String.format("cmd.exe /c dir %s", homeDirectory));
+		      .exec(String.format("cmd.exe /c dir"));
 		} else {
 		    process = Runtime.getRuntime()
-		      .exec(String.format("/bin/sh -c ls %s", homeDirectory));
+		      .exec(String.format("/bin/sh -c ls"));
 		}
 		StreamGobbler streamGobbler = 
 		  new StreamGobbler(process.getInputStream(), System.out::println);
