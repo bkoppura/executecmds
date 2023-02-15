@@ -1,0 +1,13 @@
+mkdir newdir
+type input.txt > output.txt
+del input.txt
+type output.txt > input.txt
+del backup.txt
+copy file.txt backup.txt
+del file.txt
+copy backup.txt file.txt
+del backup.txt
+copy file.txt backup.txt
+ren oldname.txt newname.txt
+del oldname.txt
+ren newname.txt oldname.txt
